@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>顺德一日游行程规划</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --background-color: #f9f9f9;
+            --text-color: #333;
+            --border-color: #ddd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .trip-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f5f6fa;
+            border-radius: 8px;
+        }
+
+        .info-item {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .info-item i {
+            color: var(--secondary-color);
+            margin-right: 5px;
+        }
+
+        .schedule {
+            margin-bottom: 30px;
+        }
+
+        .schedule-item {
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--secondary-color);
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .time {
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .location {
+            font-weight: 500;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-color);
+        }
+
+        .location:hover {
+            color: var(--secondary-color);
+        }
+
+        .location i {
+            margin-left: 8px;
+            font-size: 0.9em;
+        }
+
+        .details {
+            padding-left: 20px;
+        }
+
+        .details li {
+            margin-bottom: 5px;
+            list-style-type: none;
+        }
+
+        .details li:before {
+            content: "•";
+            color: var(--secondary-color);
+            margin-right: 8px;
+        }
+
+        .tips {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .tips h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .emergency {
+            background: #fff3f3;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .emergency h3 {
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+
+        .print-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: #34495e;
+        }
+
+        @media print {
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
+
+            .print-button {
+                display: none;
+            }
+
+            body {
+                background: white;
+            }
+
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .trip-info {
+                flex-direction: column;
+            }
+
+            .info-item {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>顺德一日游行程规划</h1>
+            <div class="trip-info">
+                <div class="info-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>建议游玩日期：周末或节假日</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <span>游玩时长：约10小时</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>起点：清晖园</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="schedule">
+            <div class="schedule-item">
+                <div class="time">09:00 - 11:30</div>
+                <div class="location" data-address="佛山市顺德区大良清晖路23号" data-name="清晖园">
+                    清晖园
+                    <i class="fas fa-location-arrow"></i>
+                </div>
+                <ul class="details">
+                    <li>地址：大良清晖路23号</li>
+                    <li>门票：约60元</li>
+                    <li>特色：岭南园林建筑代表，体验顺德传统文化</li>
+                    <li>重点游览：状元堂、竹苑、启明居等</li>
+                </ul>
+            </div>
+
+            <div class="schedule-item">
+                <div class="time">12:00 - 14:00</div>
+                <div class="location" data-address="佛山市顺德区清晖路与隔岗大街交叉口北120米" data-name="华盖味道美食街">
+                    华盖味道美食街
+                    <i class="fas fa-location-arrow"></i>
+                </div>
+                <ul class="details">
+                    <li>地址：清晖路与隔岗大街交叉口北120米</li>
+                    <li>推荐美食：双皮奶、顺德鱼生、煎酿三宝、姜撞奶</li>
+                    <li>建议：避开12:00-13:00的用餐高峰</li>
+                </ul>
+            </div>
+
+            <div class="schedule-item">
+                <div class="time">14:30 - 16:30</div>
+                <div class="location" data-address="佛山市顺德区大良民安路6号" data-name="顺德博物馆">
+                    顺德博物馆
+                    <i class="fas fa-location-arrow"></i>
+                </div>
+                <ul class="details">
+                    <li>地址：民安路6号</li>
+                    <li>门票：免费</li>
+                    <li>特色：了解顺德历史文化，岭南文化精髓</li>
+                </ul>
+            </div>
+
+            <div class="schedule-item">
+                <div class="time">17:00 - 19:00</div>
+                <div class="location" data-address="佛山市顺德区大良旧寨古村东坊中街一巷二十号" data-name="十五十六饭店">
+                    十五十六饭店（晚餐）
+                    <i class="fas fa-location-arrow"></i>
+                </div>
+                <ul class="details">
+                    <li>地址：大良旧寨古村东坊中街一巷二十号</li>
+                    <li>必点美食：顺德炒牛奶、白灼生虾、卜卜蚬、顺德斋炒糯米饭</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tips">
+            <h3><i class="fas fa-lightbulb"></i> 实用贴士</h3>
+            <ul class="details">
+                <li>点击地点名称可以打开导航</li>
+                <li>建议提前预约博物馆参观</li>
+                <li>清晖园建议上午参观，光线最佳</li>
+                <li>午餐建议避开12:00-13:00的高峰期</li>
+                <li>携带物品：遮阳伞、相机、水和零食、现金和移动支付工具</li>
+            </ul>
+        </div>
+
+        <div class="emergency">
+            <h3><i class="fas fa-phone-alt"></i> 紧急联系电话</h3>
+            <ul class="details">
+                <li>顺德旅游咨询：0757-22832222</li>
+                <li>急救：120</li>
+                <li>警察：110</li>
+                <li>消防：119</li>
+            </ul>
+        </div>
+
+        <button class="print-button" onclick="window.print()">
+            <i class="fas fa-print"></i> 打印行程
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 打印功能
+            document.querySelector('.print-button').addEventListener('click', function() {
+                window.print();
+            });
+
+            // 检测设备类型
+            function getMobileOperatingSystem() {
+                const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+                
+                if (/android/i.test(userAgent)) {
+                    return 'Android';
+                }
+
+                if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                    return 'iOS';
+                }
+
+                return 'unknown';
+            }
+
+            // 处理导航
+            function handleNavigation(address, name) {
+                const os = getMobileOperatingSystem();
+                let url;
+
+                if (os === 'iOS') {
+                    // iOS 高德地图URL Scheme
+                    url = `iosamap://path?sourceApplication=顺德一日游&dev=0&dlat=&dlon=&dname=${encodeURIComponent(name)}&daddr=${encodeURIComponent(address)}`;
+                } else if (os === 'Android') {
+                    // Android 高德地图URL Scheme
+                    url = `androidamap://route?sourceApplication=顺德一日游&dev=0&dlat=&dlon=&dname=${encodeURIComponent(name)}&daddr=${encodeURIComponent(address)}&t=0`;
+                } else {
+                    // 在电脑浏览器中打开网页版高德地图
+                    url = `https://uri.amap.com/navigation?to=,,${encodeURIComponent(name)}&addr=${encodeURIComponent(address)}&callnative=1`;
+                }
+
+                // 尝试打开高德地图
+                window.location.href = url;
+
+                // 如果3秒后还在当前页面，说明可能没有安装高德地图，提示下载
+                setTimeout(function() {
+                    if (os === 'iOS') {
+                        window.location.href = 'https://apps.apple.com/cn/app/id461703208';
+                    } else if (os === 'Android') {
+                        window.location.href = 'https://mobile.amap.com/';
+                    }
+                }, 3000);
+            }
+
+            // 为所有地点添加点击事件
+            document.querySelectorAll('.location').forEach(function(element) {
+                element.addEventListener('click', function() {
+                    const address = this.dataset.address;
+                    const name = this.dataset.name;
+                    handleNavigation(address, name);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
